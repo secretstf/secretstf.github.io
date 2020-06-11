@@ -5,7 +5,7 @@
 			First Test
 		</title>
 	</head>
-	
+
 	<body>
 		<p>Hello World. My name is Awab Masroor</p>
 		<script src="https://mcapi.us/scripts/minecraft.js"></script>
@@ -13,7 +13,7 @@
     	  		My awesome server is currently <span class="server-online"></span>!
     		</div>
 		<script>
-      		MinecraftAPI.getServerStatus('mc.botistan.ga', {
+      		MinecraftAPI.getServerStatus('75.181.180.117', {
         		port: 25565 // optional, only if you need a custom port
       		}, function (err, status) {
         		if (err) {
@@ -22,7 +22,7 @@
 
         // you can change these to your own message!
 				document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
-				
+
       });
     </script>
 	</body>
