@@ -1,4 +1,5 @@
 var code = "";
+var attempts = 0;
 
 function go(){
   alert("Yay");
@@ -63,7 +64,11 @@ function checkPSWD() {
     document.getElementById("PasswordOutput").innerHTML = "The CodeMaster's code is valid!";
     document.getElementById("PasswordInput").disabled = true;
     code = pswd;
+    attempts = 0;
     document.getElementById("CheckBtn").disabled = false;
+    document.getElementById("attemptTitle").hidden = false;
+    document.getElementById("attempts_list").innerHTML="";
+    document.getElementById("CorrectGuess").remove();
   }
 
   else{
@@ -132,6 +137,37 @@ function check(){
       document.getElementById(OutputBoxes[i]).style.background = "#c6c6c6";
     }
   }
+
+  var attempt = document.createElement("li");
+
+  var attemptBox = [document.createElement("canvas"), document.createElement("canvas"), 
+                      document.createElement("canvas"), document.createElement("canvas")];
+
+  for(var i = 0; i < attemptBox.length; i++){
+    attemptBox[i].className = "attemptsInput";
+    attemptBox[i].style.background = convertCharToClr(input[i], true);
+    attempt.appendChild(attemptBox[i]);
+  }
+  
+  var attemptOuput =[document.createElement("canvas"), document.createElement("canvas"),
+                    document.createElement("canvas"), document.createElement("canvas")];
+
+  for(var i = 0; i < attemptOuput.length; i++){
+    attemptOuput[i].className = "attemptsOutput";
+    attemptOuput[i].style.background = document.getElementById(OutputBoxes[i]).style.background;
+    attempt.appendChild(attemptOuput[i]);
+  }
+
+  document.getElementById("attempts_list").appendChild(attempt);
+  attempts += 1;
+
+  if(attempts == 10){
+    document.getElementById("PasswordInput").disabled = false;
+    document.getElementById("CheckBtn").disabled = true;
+    document.getElementById("PasswordOutput").style.color = "red";
+    document.getElementById("PasswordOutput").innerHTML = "Unfortunately, it seems you have run out of guesses.<br> The correct answer is shown underneath all your failed attempts."
+    showGuess();
+  }
 }
 
 
@@ -152,7 +188,30 @@ function convertClrToChar(color){
   }
 }
 
-function convertCharToClr(charact){
-  if(charact == "B"){return "#000000";}
+function convertCharToClr(charact, blue = false){
+  if(charact == "B" && !blue){return "#000000";}
   if(charact == "W"){return "#ffffff";}
+  if(charact == "R"){return "#ff0000";}
+  if(charact == "B"){return "#0000ff";}
+  if(charact == "G"){return "#00ff00";}
+  if(charact == "Y"){return "#ffff00";}
+  if(charact == "C"){return "#00ffff";}
+  if(charact == "P"){return "#ffc0cb";}
+}
+
+function showGuess(){
+  var codeShow = document.createElement("div");
+  codeShow.id = "CorrectGuess";
+  codeShow.style.textAlign = "center";
+  var corGuess = [document.createElement("canvas"), document.createElement("canvas"), 
+                      document.createElement("canvas"), document.createElement("canvas")];
+
+  for(var i = 0; i < corGuess.length; i++){
+    corGuess[i].className = "correctGuess";
+    corGuess[i].style.background = convertCharToClr(code.charAt(i), true);
+    if(i == 0){corGuess[i].style.marginLeft = "0px";}
+    codeShow.appendChild(corGuess[i]);
+  }
+  
+  document.getElementById("attempts").appendChild(codeShow);
 }

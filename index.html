@@ -61,5 +61,12 @@
 
     <h6 style="text-align: center;"><a id="LinkForPswdExplanation" href="./PaswordExplanation.html" onmouseover="hover(this)" onmouseout="hoverLeave(this)">Password: </a><input id="PasswordInput" maxlength="4" style="text-align: center" placeholder="CodeMaster's Code" type="password" onchange="checkPSWD()"></h6>
     <p id="PasswordOutput" style="text-align: center;"></p>
+
+    <div id="attempts">
+      <h5 hidden="true" id="attemptTitle"><b><u>Attempts:</u></b></h5>
+      <ol id="attempts_list">
+      </ol>
+      <div id="CorrectGuess"></div>
+    </div>
   </body>
 </html>
