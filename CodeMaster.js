@@ -130,6 +130,7 @@ function check(){
   if(outputArray.length == 4 && outputArray.indexOf("W") == -1){
     document.getElementById("PasswordInput").disabled = false;
     document.getElementById("CheckBtn").disabled = true;
+    document.getElementById("GeneratePSWD").disabled = false;
     document.getElementById("PasswordOutput").innerHTML = "Congragulations! CodeBreaker, you have won!\n CodeMaker, maybe try one of the 1295 codes remaining."
   }
 
