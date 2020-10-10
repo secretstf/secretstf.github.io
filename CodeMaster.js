@@ -140,7 +140,7 @@ function check(){
 
   var attempt = document.createElement("li");
 
-  var attemptBox = [document.createElement("canvas"), document.createElement("canvas"), 
+  var attemptBox = [document.createElement("canvas"), document.createElement("canvas"),
                       document.createElement("canvas"), document.createElement("canvas")];
 
   for(var i = 0; i < attemptBox.length; i++){
@@ -148,13 +148,13 @@ function check(){
     attemptBox[i].style.background = convertCharToClr(input[i], true);
     attempt.appendChild(attemptBox[i]);
   }
-  
+
   var attemptOuput =[document.createElement("canvas"), document.createElement("canvas"),
                     document.createElement("canvas"), document.createElement("canvas")];
 
   for(var i = 0; i < attemptOuput.length; i++){
     attemptOuput[i].className = "attemptsOutput";
-    attemptOuput[i].style.background = document.getElementById(OutputBoxes[i]).style.background;
+    attemptOuput[i].style.background = document.getElementById(OutputBoxes[OutputBoxes.length-1-i]).style.background;
     attempt.appendChild(attemptOuput[i]);
   }
 
@@ -203,7 +203,7 @@ function showGuess(){
   var codeShow = document.createElement("div");
   codeShow.id = "CorrectGuess";
   codeShow.style.textAlign = "center";
-  var corGuess = [document.createElement("canvas"), document.createElement("canvas"), 
+  var corGuess = [document.createElement("canvas"), document.createElement("canvas"),
                       document.createElement("canvas"), document.createElement("canvas")];
 
   for(var i = 0; i < corGuess.length; i++){
@@ -212,6 +212,6 @@ function showGuess(){
     if(i == 0){corGuess[i].style.marginLeft = "0px";}
     codeShow.appendChild(corGuess[i]);
   }
-  
+
   document.getElementById("attempts").appendChild(codeShow);
 }
