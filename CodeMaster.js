@@ -65,6 +65,7 @@ function checkPSWD() {
     document.getElementById("PasswordInput").disabled = true;
     code = pswd;
     attempts = 0;
+    document.getElementById("GeneratePSWD").disabled = true;
     document.getElementById("CheckBtn").disabled = false;
     document.getElementById("attemptTitle").hidden = false;
     document.getElementById("attempts_list").innerHTML="";
@@ -164,6 +165,7 @@ function check(){
   if(attempts == 10){
     document.getElementById("PasswordInput").disabled = false;
     document.getElementById("CheckBtn").disabled = true;
+    document.getElementById("GeneratePSWD").disabled = false;
     document.getElementById("PasswordOutput").style.color = "red";
     document.getElementById("PasswordOutput").innerHTML = "Unfortunately, it seems you have run out of guesses.<br> The correct answer is shown underneath all your failed attempts."
     showGuess();
@@ -214,4 +216,36 @@ function showGuess(){
   }
 
   document.getElementById("attempts").appendChild(codeShow);
+}
+
+function generatepswd(){
+  var newCode = '';
+  for(var i = 0; i < 4; i++){
+    var x = Math.floor((Math.random() * 6) + 1);
+
+    switch (x) {
+      case 1:
+        newCode += 'R';
+        break;
+      case 2:
+        newCode += 'G';
+        break;
+      case 3:
+        newCode += 'B';
+        break;
+      case 4:
+        newCode += 'Y';
+        break;
+      case 5:
+        newCode += 'C';
+        break;
+      case 6:
+        newCode += 'P';
+        break;
+      default:
+        break;
+    }
+  }
+  document.getElementById('PasswordInput').value = newCode;
+  checkPSWD();
 }

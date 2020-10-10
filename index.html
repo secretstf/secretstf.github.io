@@ -58,9 +58,14 @@
       <canvas id="Check4" width="20" height="10" style="border: 1px solid; background: #C6C6c6;"></canvas> <br>
       <input id="CheckBtn" type="button" disabled="false" onclick="check()" width="30" value="Check!" style="text-align: right;"></input>
     </div>
-
-    <h6 style="text-align: center;"><a id="LinkForPswdExplanation" href="./PaswordExplanation.html" onmouseover="hover(this)" onmouseout="hoverLeave(this)">Password: </a><input id="PasswordInput" maxlength="4" style="text-align: center" placeholder="CodeMaster's Code" type="password" onchange="checkPSWD()"></h6>
-    <p id="PasswordOutput" style="text-align: center;"></p>
+    <div class="PasswordChose">
+      <h6 style="text-align: center;">
+        <a id="LinkForPswdExplanation" href="./PaswordExplanation.html" onmouseover="hover(this)" onmouseout="hoverLeave(this)"><b>Password: </b></a>
+        <input id="PasswordInput" maxlength="4" style="text-align: center" placeholder="CodeMaster's Code" type="password" onchange="checkPSWD()"></input>
+        <input id="GeneratePSWD" type="button" onclick="generatepswd()" width="60" value="Generate!"></input>
+      </h6>
+      <p id="PasswordOutput" style="text-align: center;"></p>
+    </div>
 
     <div id="attempts">
       <h5 hidden="true" id="attemptTitle"><b><u>Attempts:</u></b></h5>
