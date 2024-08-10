@@ -11120,7 +11120,8 @@ body {
 }
 
 .projects-section {
-  padding: 10rem 0;
+  padding-top: 10rem 0;
+  padding-bottom: 5rem;
 }
 .projects-section .featured-text {
   padding: 2rem;
@@ -11162,6 +11163,9 @@ body {
 
 .contact-section {
   padding-top: 5rem;
+  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0,0,0,0.3) 100%), url("../assets/img/bg-contact-img.jpg") no-repeat 50% 40%; 
+  /* background-size: 100% 300%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%); */
 }
 .contact-section .card {
   border: 0;
@@ -11200,4 +11204,12 @@ body {
 
 .footer {
   padding: 5rem 0;
+}
+
+.background-towers {
+  background-image: 
+    linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0, 0, 0, 1) 100%),
+    url("../assets/img/bg-contact-img.jpg");
+  background-size: 150%;
+  background-position: center;
 }
