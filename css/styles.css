@@ -11030,7 +11030,7 @@ body {
     color: #fff;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #000;
@@ -11212,4 +11212,5 @@ body {
     url("../assets/img/bg-contact-img.jpg");
   background-size: 150%;
   background-position: center;
+  background-repeat: no-repeat;
 }
